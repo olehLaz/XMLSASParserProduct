@@ -1,11 +1,17 @@
 package ua.xmlsasparserproduct.domain;
 
+import javax.persistence.*;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 
+@Entity
+@Table(name = "offer")
 public class Offers {
-    private int id;
+
+    @Id
+    private Long id;
+
     private boolean available;
     private  String group_id;
     private String url;
@@ -19,16 +25,20 @@ public class Offers {
     private String description;
     private String vendor;
     private long code;
+
+    @ElementCollection(fetch = FetchType.EAGER)
+    @CollectionTable(name = "offer_param", joinColumns = @JoinColumn(name = "offer_id"))
+    @Enumerated(EnumType.STRING)
     private List<String> param = new ArrayList<>();
 
     public Offers() {
     }
 
-    public int getId() {
+    public Long getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(Long id) {
         this.id = id;
     }
 

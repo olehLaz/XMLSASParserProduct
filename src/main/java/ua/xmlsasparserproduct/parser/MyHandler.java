@@ -42,7 +42,7 @@ public class MyHandler extends DefaultHandler {
             String group_id = attributes.getValue("group_id");
             // initialize Offer object and set id attribute
             offers = new Offers();
-            offers.setId(Integer.parseInt(id));
+            offers.setId(Long.parseLong(id));
             offers.setAvailable(Boolean.parseBoolean(available));
             offers.setGroup_id(group_id);
             // initialize list
