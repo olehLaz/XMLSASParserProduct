@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="https://www.thymeleaf.org"
+xmlns:sec="https://www.thymeleaf.org/thymeleaf-extras-springsecurity3">
+
+<head>
+    <meta charset="UTF-8">
+</head>
+<body>
+    <div>
+        <form th:action="@{/logout}" method="post">
+            <input type="hidden" name="_csrf" value="{{_csrf.token}}" />
+            <input type="submit" value="Sign Out"/>
+        </form>
+    </div>
+    <div>
+        <form th:action="@{/main}" method="post">
+            <input type="text" name="text" placeholder="Введите сообщение" />
+            <input type="text" name="tag" placeholder="Тэг" />
+            <input type="hidden" name="filter" />
+            <input type="hidden" name="_csrf" value="{{_csrf.token}}" />
+            <button type="submit">Добавить</button>
+        </form>
+    </div>
+
+
+    <div>Список сообщений</div>
+    <form method="get" th:action="@{/main}">
+        <input type="text" name="filter" th:value="${filter}">
+        <button type="submit">Найти</button>
+    </form>
+    <div th:each="messages : ${messages}">
+            <b th:text="${messages.id}"></b>
+            <span th:text="${messages.text}"></span>
+            <i th:text="${messages.tag}"></i>
+            <strong th:text="${messages.authorName}"></strong>
+    </div>
+
+</body>
+</html>
