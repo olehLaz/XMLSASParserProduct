@@ -1,7 +1,7 @@
 package ua.xmlsasparserproduct.parser;
 
 import org.xml.sax.SAXException;
-import ua.xmlsasparserproduct.Offers;
+import ua.xmlsasparserproduct.domain.Offers;
 
 import javax.xml.parsers.ParserConfigurationException;
 import javax.xml.parsers.SAXParser;

@@ -1,4 +1,4 @@
-package ua.xmlsasparserproduct;
+package ua.xmlsasparserproduct.domain;
 
 import java.util.ArrayList;
 import java.util.List;

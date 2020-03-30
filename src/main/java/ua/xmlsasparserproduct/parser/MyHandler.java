@@ -3,10 +3,9 @@ package ua.xmlsasparserproduct.parser;
 import org.xml.sax.Attributes;
 import org.xml.sax.SAXException;
 import org.xml.sax.helpers.DefaultHandler;
-import ua.xmlsasparserproduct.Offers;
+import ua.xmlsasparserproduct.domain.Offers;
 
 import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.List;
 
 public class MyHandler extends DefaultHandler {
